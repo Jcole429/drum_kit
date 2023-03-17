@@ -5,12 +5,14 @@ var audioFileSource = "sounds/";
 for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", function () {
         makeSound(this.innerHTML);
+        buttonAnimation(this.innerHTML);
     });
 }
 
 // Detecting Keypress
 document.addEventListener("keydown", function (event) {
     makeSound(event.key);
+    buttonAnimation(event.key);
 });
 
 function makeSound(key) {
@@ -46,4 +48,12 @@ function makeSound(key) {
         default:
             console.log("Unknown button: " + this.innerHTML);
     }
+}
+
+function buttonAnimation(key) {
+    var key = document.querySelector("." + key);
+    key.classList.add("pressed");
+    setTimeout(function () {
+        key.classList.remove("pressed");
+    }, 100);
 }
