@@ -1,5 +1,5 @@
 var buttons = document.querySelectorAll(".drum");
-var audioFileSource = "sounds/"
+var audioFileSource = "sounds/";
 
 for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", function () {
