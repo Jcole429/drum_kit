@@ -8,6 +8,11 @@ for (let i = 0; i < buttons.length; i++) {
     });
 }
 
+// Detecting Keypress
+document.addEventListener("keydown", function (event) {
+    makeSound(event.key);
+});
+
 function makeSound(key) {
     switch (key) {
         case "w":
